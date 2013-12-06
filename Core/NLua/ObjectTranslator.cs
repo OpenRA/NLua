@@ -185,7 +185,8 @@ namespace NLua
 		{
 			LuaLib.LuaPushStdCallCFunction (luaState, metaFunctions.indexFunction);
 			LuaLib.LuaSetGlobal (luaState, "get_object_member");
-			LuaLib.LuaPushStdCallCFunction (luaState, importTypeFunction);
+			// Disable dangerous bits we don't want for OpenRA
+			/*LuaLib.LuaPushStdCallCFunction (luaState, importTypeFunction);
 			LuaLib.LuaSetGlobal (luaState, "import_type");
 			LuaLib.LuaPushStdCallCFunction (luaState, loadAssemblyFunction);
 			LuaLib.LuaSetGlobal (luaState, "load_assembly");
@@ -200,7 +201,7 @@ namespace NLua
 			LuaLib.LuaPushStdCallCFunction (luaState,ctypeFunction);
 			LuaLib.LuaSetGlobal (luaState,"ctype");
 			LuaLib.LuaPushStdCallCFunction (luaState,enumFromIntFunction);
-			LuaLib.LuaSetGlobal(luaState,"enum");
+			LuaLib.LuaSetGlobal(luaState,"enum");*/
 		}
 
 		/*
